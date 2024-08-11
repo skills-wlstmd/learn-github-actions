@@ -18,4 +18,5 @@ jobs:
           script: |
             cd learn-github-actions
             git pull origin main
-            flask --app app run --host 0.0.0.0 &
+            pkill -f "flask --app app run"
+            nohup flask --app app run --host 0.0.0.0 > flask.log 2>&1 &
