@@ -18,5 +18,4 @@ jobs:
           script: |
             cd learn-github-actions
             git pull origin main
-            pkill -f "flask --app app run"
-            nohup flask --app app run --host 0.0.0.0 > flask.log 2>&1 &
+            sudo systemctl restart myflaskapp.service
